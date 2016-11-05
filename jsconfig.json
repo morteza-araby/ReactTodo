@@ -1,0 +1,18 @@
+{
+   "compileOnSave": false,
+    "filesGlob": [
+        "../typings/**/*.*.js",
+        "**/*.{js}"
+    ],
+    "compilerOptions": {
+        "jsx": "preserve",
+        "target": "es6",
+        "removeComments": false,
+        "sourceMap": true,
+        "module": "system",
+        "allowSyntheticDefaultImports": true
+    },
+    "files": [
+        "./typings/index.d.ts"
+    ]
+}
