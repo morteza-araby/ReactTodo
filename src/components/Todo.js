@@ -6,8 +6,7 @@ class Todo extends React.Component {
     }
 
     render() {
-        var {text,id} = this.props        
-        console.log('Text is : ', text)
+        var {text,id} = this.props               
         return (
             <div>
             {id}. {text}
