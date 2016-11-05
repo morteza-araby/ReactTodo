@@ -1,0 +1,10 @@
+This boilerplate supports React, Redux and Foundation UI basic project setting, with webpack.
+This can be depolyed to heroku using server.js and node command.
+
+To run in development use "npm run serve" which will run app at port 4080
+
+For build run "npm run build"
+
+for heroku deployment uses "npm run" which will run the express server.
+
+This project adds the jquery and foundation using webpack.
