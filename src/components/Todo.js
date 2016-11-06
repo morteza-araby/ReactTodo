@@ -1,15 +1,18 @@
 import React from 'react'
 
 class Todo extends React.Component {
-    constructor(props, context){
-        super(props, context)       
+    constructor(props, context) {
+        super(props, context)
     }
 
     render() {
-        var {text,id} = this.props               
+        var {id, text, completed} = this.props
         return (
-            <div>
-            {id}. {text}
+            <div onClick={() => {
+                this.props.onToggle(id)
+            } }>
+                <input type='checkbox' checked={completed} />
+                {text}
             </div>
         )
     }
