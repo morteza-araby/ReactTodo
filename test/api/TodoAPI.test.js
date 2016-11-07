@@ -13,7 +13,7 @@ describe('TodoAPI', () => {
     describe('setTodos', () => {
         it('should set valid todos array', () => {
             var todos = [{
-                id:23,
+                id: 23,
                 test: 'test todos',
                 completed: false
             }]
@@ -25,7 +25,7 @@ describe('TodoAPI', () => {
         })
 
         it('should not set invalid todos array', () => {
-            var badTodos = {a:'b'}
+            var badTodos = { a: 'b' }
             TodoAPI.setTodos(badTodos)
 
             expect(localStorage.getItem('todos')).toBe(null)
@@ -49,6 +49,38 @@ describe('TodoAPI', () => {
             var actualTodos = TodoAPI.getTodos()
 
             expect(actualTodos).toEqual(todos)
+        })
+    })
+
+    describe('filterTodos', () => {
+        var todos = [
+            {
+                id: 1,
+                text: 'text1',
+                completed: true
+            },
+            {
+                id: 2,
+                text: 'text1',
+                completed: false
+            },
+            {
+                id: 3,
+                text: 'text1',
+                completed: true
+            }
+        ]
+
+        it('should return all items if showCompleted is true', () => {
+            var filterTodos = TodoAPI.filterTodos(todos, true, '')
+
+            expect(filterTodos.length).toBe(3)
+        })
+
+        it('should return all items if showCompleted is false', () => {
+            var filterTodos = TodoAPI.filterTodos(todos, false, '')
+
+            expect(filterTodos.length).toBe(1)
         })
     })
 })

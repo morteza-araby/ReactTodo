@@ -18,6 +18,19 @@ var TodoAPI = {
         }
 
         return $.isArray(todos) ? todos : []
+    },
+    filterTodos(todos, showCompleted, searchText){
+        var filterTodos = todos
+
+        // filter by showCompleted
+        filterTodos = filterTodos.filter((todo) => {
+           return !todo.completed || showCompleted
+        })
+        //filter by searchText
+
+        // Sort todos with non-completed first
+
+        return filterTodos
     }
 }
 
