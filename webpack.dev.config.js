@@ -26,7 +26,8 @@ module.exports = {
         root: __dirname,
 		modulesDirectories: [ //No need for alias anymore, I just keep it for remembering.
 			'node_modules',
-			'./src/components' 
+			'./src/components',
+            './src/api' 
 		],
         alias: {
             Components: PATHS.app + '/components',
