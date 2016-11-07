@@ -55,6 +55,7 @@
     "express": "^4.14.0",
     "foundation-sites": "^6.2.4",
     "lodash": "^3.10.1",
+    "moment": "^2.15.2",
     "node-uuid": "^1.4.7",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
