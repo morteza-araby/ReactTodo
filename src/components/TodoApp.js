@@ -65,7 +65,7 @@ class TodoApp extends React.Component {
         var {todos, showCompleted, searchText} = this.state
         var filterTodos = TodoAPI.filterTodos(todos, showCompleted, searchText)
         return (
-            <div>
+            <div className='container'>
                 <TodoSearch onSearch={this.handleSearch} />
                 <TodoList todos={filterTodos} onToggle={this.handleToggle} />
                 <AddTodo onAddTodo={this.handleAddTodo} />
