@@ -18,12 +18,6 @@ module.exports = {
     externals: {
         jquery: 'jQuery'
     },
-    plugins: [
-        new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery'
-        })
-    ],
     output: {
         path: PATHS.build,
         filename: 'bundle.js'
