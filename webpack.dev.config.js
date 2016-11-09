@@ -25,15 +25,18 @@ module.exports = {
     resolve: {
         root: __dirname,
 		modulesDirectories: [ //No need for alias anymore, I just keep it for remembering.
-			'node_modules',
+			'node_modules',                        
 			'./src/components',
             './src/api',            
             './src/reducers',
             './src/actions'
 		],
         alias: {
+            Src: PATHS.app,
             Components: PATHS.app + '/components',
-            Main: PATHS.app + '/components/Main.js'
+            Main: PATHS.app + '/components/Main.js',
+            Reducers: PATHS.app + '/reducers',
+            configureStore: PATHS.app + '/store/configureStore.js'
         },
         extensions: ['', '.js', '.jsx']
     },

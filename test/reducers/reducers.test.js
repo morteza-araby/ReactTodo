@@ -2,7 +2,7 @@ import expect from 'expect'
 import df from 'deep-freeze-strict'
 import searchTextReducer from 'searchTextReducer'
 import showCompletedReducer from 'showCompletedReducer'
-import todoReducer from 'todoReducer'
+import todosReducer from 'todosReducer'
 
 describe('Reducers', () => {
     describe('searchTextReducer', () => {
@@ -30,14 +30,14 @@ describe('Reducers', () => {
         })
     })
 
-    describe('todoReducer', () => {
+    describe('todosReducer', () => {
         it('should add new todo', () => {
             var action = {
                 type: 'ADD_TODO',
                 text: 'Walk the dog'
             }
 
-            var res = todoReducer(df([]), df(action))
+            var res = todosReducer(df([]), df(action))
 
             expect(res.length).toEqual(1)
             expect(res[0].text).toEqual(action.text)
@@ -55,7 +55,7 @@ describe('Reducers', () => {
                 type: 'TOGGLE_TODO',
                 id: 123
             }
-            var res = todoReducer(df(todos), df(action))
+            var res = todosReducer(df(todos), df(action))
 
             expect(res[0].completed).toEqual(false)
             expect(res[0].completedAt).toEqual(undefined)

@@ -14,7 +14,7 @@ class TodoApp extends React.Component {
             todos: TodoAPI.getTodos(),
             showCompleted: false,
             searchText: '',
-            createdAt:'',
+            createdAt: '',
             completedAt: undefined
         }
 
@@ -22,11 +22,11 @@ class TodoApp extends React.Component {
         this.handleAddTodo = this.handleAddTodo.bind(this)
         this.handleToggle = this.handleToggle.bind(this)
     }
-     
-     componentDidUpdate() {
+
+    componentDidUpdate() {
         TodoAPI.setTodos(this.state.todos)
     }
-    
+
     handleAddTodo(text) {
         this.setState({
             todos: [
@@ -35,8 +35,8 @@ class TodoApp extends React.Component {
                     id: uuid(),
                     text: text,
                     completed: false,
-                     createdAt: moment().unix(),
-                     completedAt: undefined
+                    createdAt: moment().unix(),
+                    completedAt: undefined
                 }
             ]
         })
@@ -67,7 +67,7 @@ class TodoApp extends React.Component {
         return (
             <div className='container'>
                 <TodoSearch onSearch={this.handleSearch} />
-                <TodoList todos={filterTodos} onToggle={this.handleToggle} />
+                <TodoList />
                 <AddTodo onAddTodo={this.handleAddTodo} />
             </div>
         )

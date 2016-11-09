@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import searchTextReducer from './searchTextReducer'
 import showCompletedReducer from './showCompletedReducer'
-import todoReducer from './todoReducer'
+import todosReducer from './todosReducer'
 
 const rootReducer = combineReducers({
   searchText: searchTextReducer,
   showCompleted: showCompletedReducer,
-  todo: todoReducer
+  todos: todosReducer
 });
 
 export default rootReducer;
