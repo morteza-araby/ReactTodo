@@ -1,6 +1,8 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import actions from 'actions'
 
-class AddTodo extends React.Component {
+export class AddTodo extends React.Component {
     constructor(props, context){
         super(props, context)   
 
@@ -10,10 +12,11 @@ class AddTodo extends React.Component {
     handleSubmit(e){
         e.preventDefault()
         var todoText = this.refs.todoText.value
-
+        var {dispatch} = this.props
         if(todoText.length > 0){
             this.refs.todoText.value = ''
-            this.props.onAddTodo(todoText)
+            //this.props.onAddTodo(todoText)
+            dispatch(actions.addTodo(todoText))
         } else {
             this.refs.todoText.focus()
         }
@@ -31,4 +34,6 @@ class AddTodo extends React.Component {
     }
 }
 
-export default AddTodo
+
+
+export default connect()(AddTodo)

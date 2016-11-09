@@ -23,6 +23,8 @@ export default function todoReducer(state = [], action) {
                      completed: nextCompleted,
                      completedAt: nextCompleted ? moment().unix() : undefined
                  }
+             } else {
+                 return todo
              }
          })
          
