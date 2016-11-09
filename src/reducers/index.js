@@ -4,9 +4,9 @@ import showCompletedReducer from './showCompletedReducer'
 import todoReducer from './todoReducer'
 
 const rootReducer = combineReducers({
-  searchTextReducer,
-  showCompletedReducer,
-  todoReducer
+  searchText: searchTextReducer,
+  showCompleted: showCompletedReducer,
+  todo: todoReducer
 });
 
 export default rootReducer;
