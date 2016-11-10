@@ -4,6 +4,8 @@
     display: flex;
     padding: 1rem;
     transition: background .3s ease;
+    word-wrap: break-word;
+    word-break: break-word;
 
     p, input {
         margin: 0;

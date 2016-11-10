@@ -13,6 +13,13 @@ var actions = {
         }
     },
 
+    addTodos(todos) {
+        return {
+            type: 'ADD_TODOS',
+            todos
+        }
+    },
+
     toggleShowCompleted() {
         return {
             type: 'TOGGLE_SHOW_COMPLETED'
@@ -25,7 +32,6 @@ var actions = {
             id
         }
     }
-
 }
 
 export default actions

@@ -6,6 +6,7 @@ import reducers from './reducers'
 import actions from 'actions'
 import routes from './routes'
 import {configureStore} from 'configureStore'
+import TodoAPI from 'TodoAPI'
 // Load foundation
 //require('foundation-sites/dist/foundation.min.css')
 require('./styles/app.scss')
@@ -14,9 +15,14 @@ $(document).foundation()
 
 //var store = require('configureStore').configure()
 var store = configureStore()
-store.subscribe(() => {
-  console.log('Current State: ', store.getState())
+store.subscribe(() => { 
+  var state = store.getState()
+   console.log('Current State: ', state)
+   TodoAPI.setTodos(state.todos)
 })
+
+var initialTodos = TodoAPI.getTodos()
+store.dispatch(actions.addTodos(initialTodos))
 
 // store.dispatch(actions.addTodo('Clean the yard'))
 // store.dispatch(actions.setSearchText('yard'))

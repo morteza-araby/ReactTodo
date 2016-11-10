@@ -18,7 +18,7 @@ describe('Reducers', () => {
         })
     })
 
-     describe('showCompletedReducer', () => {
+    describe('showCompletedReducer', () => {
         it('should toggle showCompleted', () => {
             var action = {
                 type: 'TOGGLE_SHOW_COMPLETED'
@@ -44,7 +44,7 @@ describe('Reducers', () => {
         })
 
         it('should toggle todo', () => {
-            var todos=[{
+            var todos = [{
                 id: 123,
                 text: 'something',
                 completed: true,
@@ -60,7 +60,27 @@ describe('Reducers', () => {
             expect(res[0].completed).toEqual(false)
             expect(res[0].completedAt).toEqual(undefined)
         })
+
+        it('should add existing todos', () => {
+            var todos = [{
+                id: '111',
+                text: 'anything',
+                completed: false,
+                completedAt: undefined,
+                createdAt: 33000
+            }]
+            var action = {
+                type: 'ADD_TODOS',
+                todos
+            }
+
+            var res = todosReducer(df([]), df(action))
+
+            expect(res.length).toEqual(1)
+            expect(res[0]).toEqual(todos[0])
+
+        })
     })
-    
-    
+
+
 })
