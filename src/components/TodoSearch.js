@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import actions from 'actions'
+import * as  actions from 'Actions'
 
 export class TodoSearch extends React.Component {
     constructor(props, context) {

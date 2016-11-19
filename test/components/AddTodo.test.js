@@ -4,7 +4,7 @@ import expect from 'expect'
 import $ from 'jQuery'
 import TestUtils from 'react-addons-test-utils'
 import {AddTodo} from 'AddTodo'
-import actions from 'actions'
+import * as  actions from 'Actions'
 
 describe('AddTodo', () => {
     it('should exist', () => {

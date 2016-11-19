@@ -36,6 +36,7 @@ module.exports = {
             Components: PATHS.app + '/components',
             Main: PATHS.app + '/components/Main.js',
             Reducers: PATHS.app + '/reducers',
+            Actions: PATHS.app + '/actions',
             configureStore: PATHS.app + '/store/configureStore.js'
         },
         extensions: ['', '.js', '.jsx']
