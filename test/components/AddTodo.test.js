@@ -4,18 +4,18 @@ import expect from 'expect'
 import $ from 'jQuery'
 import TestUtils from 'react-addons-test-utils'
 import {AddTodo} from 'AddTodo'
+import actions from 'actions'
 
 describe('AddTodo', () => {
     it('should exist', () => {
         expect(AddTodo).toExist()
     })
 
+    //To get this work we have to call in AddTodo compoent submit method to startAddTodoThunk as well
+    // I'm using ReduxPromise for handling the async functions, which fails in test. Thunk seems to be working.
     it('should dispatch ADD_TODO when valid data', () => {
         var todoText = 'Check mail'
-        var action = {
-            type: 'ADD_TODO',
-            text: todoText
-        }
+        var action = actions.startAddTodoThunk(todoText)
         var spy = expect.createSpy()
         var addTodo = TestUtils.renderIntoDocument(<AddTodo dispatch={spy}/>)
         var $el = $(ReactDOM.findDOMNode(addTodo))

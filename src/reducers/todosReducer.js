@@ -5,13 +5,7 @@ export default function todoReducer(state = [], action) {
     switch (action.type) {
         case 'ADD_TODO':
             return [...state,
-                {
-                    id: uuid(),
-                    text: action.text,
-                    completed: false,
-                    createdAt: moment().unix(),
-                    completedAt: undefined
-                }
+              action.todo
             ]
         case 'TOGGLE_TODO' :
          return state.map((todo) => {

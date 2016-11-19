@@ -80,19 +80,14 @@ module.exports = {
         ]
     },
     plugins: [
-         new CleanWebpackPlugin([PATHS.build], {
-             root: __dirname,
-             verbose: true,
-             dry: false,
-             exclude: ['shared.js']
-         }),
+        //  new CleanWebpackPlugin([PATHS.build], {
+        //      root: __dirname,
+        //      verbose: true,
+        //      dry: false,
+        //      exclude: ['shared.js']
+        //  }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
+        new webpack.NoErrorsPlugin(),      
         new CopyWebpackPlugin([
             {
                 from: PATHS.app + "/index.html",
