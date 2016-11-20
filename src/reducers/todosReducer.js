@@ -28,6 +28,7 @@ export default function todoReducer(state = [], action) {
              ...action.todos
          ]
 
+ 
          case types.UPDATE_TODO:
          return state.map((todo) => {
              if(todo.id === action.id){
