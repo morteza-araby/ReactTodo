@@ -5,4 +5,5 @@ bin
 obj
 Properties
 *.user
-public/bundle.js
+public/
+config/

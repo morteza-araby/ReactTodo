@@ -5,11 +5,11 @@
 try {
     // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAoxjRkZxT5bMFNM1vyAQzYx82HxM5p9Y0",
-    authDomain: "my-todo-app-98cf4.firebaseapp.com",
-    databaseURL: "https://my-todo-app-98cf4.firebaseio.com",
-    storageBucket: "my-todo-app-98cf4.appspot.com",
-    messagingSenderId: "42777741813"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID
   }
 
   firebase.initializeApp(config)
