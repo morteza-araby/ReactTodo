@@ -81,12 +81,12 @@ module.exports = {
         ]
     },
     plugins: [
-         new CleanWebpackPlugin([PATHS.build], {
-             root: __dirname,
-             verbose: true,
-             dry: false,
-             exclude: ['shared.js']
-         }),
+        //  new CleanWebpackPlugin([PATHS.build], {
+        //      root: __dirname,
+        //      verbose: true,
+        //      dry: false,
+        //      exclude: ['shared.js']
+        //  }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
