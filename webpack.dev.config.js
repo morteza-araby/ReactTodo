@@ -3,6 +3,8 @@ const path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
 const PATHS = {
     app: path.join(__dirname, 'src'),
     build: path.join(__dirname, 'public')
@@ -105,7 +107,7 @@ module.exports = {
         })       
     ],
     /* devtool: 'cheap-module-eval-source-map',*/
-    devtool: 'source-map',
+    devtool: process.env.NODE_ENV === 'production' ? undefined : 'source-map',
     devServer: {
         historyApiFallback: true,
         contentBase: PATHS.build
