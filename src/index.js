@@ -6,10 +6,19 @@ import * as  actions from 'Actions'
 import routes from './routes'
 import {configureStore} from 'configureStore'
 import TodoAPI from 'TodoAPI'
+import firebase from 'Src/firebase'
+
+firebase.auth().onAuthStateChanged((user) => {
+  if(user){
+    browserHistory.push('/todos')
+  }else{
+    browserHistory.push('/')
+  }
+})
+
 // Load foundation
 //require('foundation-sites/dist/foundation.min.css')
 require('./styles/app.scss')
-
 $(document).foundation()
 
 var store = configureStore()
@@ -19,14 +28,6 @@ store.subscribe(() => {
 //    TodoAPI.setTodos(state.todos)
 })
 
-// var initialTodos = TodoAPI.getTodos()
-// store.dispatch(actions.addTodos(initialTodos))
-
-// store.dispatch(actions.addTodo('Clean the yard'))
-// store.dispatch(actions.setSearchText('yard'))
-// store.dispatch(actions.toggleShowCompleted())
-
-//store.dispatch(actions.startAddTodosThunk())
 store.dispatch(actions.listentodosThunk())
 
 
