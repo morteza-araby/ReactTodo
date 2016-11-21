@@ -26,7 +26,8 @@ store.subscribe(() => {
 // store.dispatch(actions.setSearchText('yard'))
 // store.dispatch(actions.toggleShowCompleted())
 
-store.dispatch(actions.startAddTodosThunk())
+//store.dispatch(actions.startAddTodosThunk())
+store.dispatch(actions.listentodosThunk())
 
 
 

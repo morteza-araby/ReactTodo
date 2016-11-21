@@ -41,6 +41,25 @@ export default function todoReducer(state = [], action) {
              }
          })
 
+        case types.UPDATE_TODOSX:
+        var newState = []
+        for(var i = 0; i< state.length; i++){
+            for(var j = 0; j< action.todos.length; j++){
+                if( state[i] === action.todos[j]){
+                    newState.push({...state[i], ...action.todos[j]})
+                }
+            }
+        }
+         return [                                 
+                     newState 
+                 ]
+
+         
+          case types.UPDATE_TODOS:
+         return [                                                   
+                    ...action.todos
+                 ]
+
          
         default:
             return state

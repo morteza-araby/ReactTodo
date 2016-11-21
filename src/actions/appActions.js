@@ -42,3 +42,11 @@ export function updateTodo(id, updates) {
     }
 
 }
+
+export function updateTodos(todos) {
+    return {
+        type: types.UPDATE_TODOS,
+        todos        
+    }
+
+}

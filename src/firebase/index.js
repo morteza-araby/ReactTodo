@@ -1,9 +1,9 @@
- import firebase from 'firebase'
- 
- 
+import firebase from 'firebase'
+
+
 
 try {
-    // Initialize Firebase
+  // Initialize Firebase
   var config = {
     apiKey: process.env.API_KEY,
     authDomain: process.env.AUTH_DOMAIN,
@@ -14,10 +14,10 @@ try {
 
   firebase.initializeApp(config)
 
-}catch(e){
-    console.log('Error setting up firebase:', e);
+} catch (e) {
+  console.log('Error setting up firebase:', e);
 }
 
-
- export var firebaseRef = firebase.database().ref()
- export default firebase
+export var githubProvider = new firebase.auth.GithubAuthProvider()
+export var firebaseRef = firebase.database().ref()
+export default firebase
