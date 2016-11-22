@@ -11,6 +11,7 @@ import firebase from 'Src/firebase'
 firebase.auth().onAuthStateChanged((user) => {
   if(user){
     store.dispatch(actions.login(user.uid))
+    store.dispatch(actions.listentodosThunk())
     browserHistory.push('/todos')
   }else{
     store.dispatch(actions.logout())
@@ -30,7 +31,6 @@ store.subscribe(() => {
 //    TodoAPI.setTodos(state.todos)
 })
 
-store.dispatch(actions.listentodosThunk())
 
 
 
