@@ -3,6 +3,7 @@ import df from 'deep-freeze-strict'
 import searchTextReducer from 'searchTextReducer'
 import showCompletedReducer from 'showCompletedReducer'
 import todosReducer from 'todosReducer'
+import authReducer from 'authReducer'
 
 describe('Reducers', () => {
     describe('searchTextReducer', () => {
@@ -113,5 +114,33 @@ describe('Reducers', () => {
         })
     })
 
+
+    describe('authReducer', () => {
+        it('should store uid on LOGIN', () => {
+            const action = {
+                type: 'LOGIN',
+                uid: '123abc'
+            }
+            const res = authReducer(undefined, df(action))
+
+            expect(res).toEqual({
+                uid: action.uid
+            })
+        })
+
+        it('should wipe auth on LOGOUT', () => {
+            const authData = {
+                uid: '123abc'
+            }
+
+            const action = {
+                type: 'LOGOUT'
+            }
+
+            const res = authReducer(df(authData), df(action))
+
+            expect(res).toEqual({})
+        })
+    })
 
 })

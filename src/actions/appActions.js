@@ -48,5 +48,19 @@ export function updateTodos(todos) {
         type: types.UPDATE_TODOS,
         todos        
     }
-
 }
+
+    export function login(uid) {
+        return{
+            type: types.LOGIN,
+            uid
+        }
+    }
+
+    export function logout(){
+        return {
+            type: types.LOGOUT
+        }
+    }
+
+

@@ -5,3 +5,6 @@ export const TOGGLE_SHOW_COMPLETED = 'TOGGLE_SHOW_COMPLETED'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const UPDATE_TODO = 'UPDATE_TODO'
 export const UPDATE_TODOS = 'UPDATE_TODOS'
+export const LOGIN = 'LOGIN'
+export const LOGOUT = 'LOGOUT'
+
