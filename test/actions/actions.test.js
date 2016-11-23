@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import ReduxPromise from "redux-promise"
 import * as  actions from 'Actions'
 
-import firebase, {firebaseRef} from 'Src/firebase/'
+import firebase, {firebaseRef, githubProvider} from 'Src/firebase/'
 
 var createMockStore = configureMockStore([thunk,ReduxPromise])
 
@@ -114,7 +114,7 @@ describe('Actions', () => {
         var todosRef
         beforeEach((done) => {
             var credential = firebase.auth.GithubAuthProvider.credential(process.env.GITHUB_ACCESS_TOKEN)
-            firebase.auth().signInWithCredential(credential).then(() =>{
+            firebase.auth().signInWithCredential(credential).then((user) =>{
                 uid = user.uid
                 todosRef = firebaseRef.child(`users/${uid}/todos`)
                 return todosRef.remove()

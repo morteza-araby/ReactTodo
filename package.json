@@ -10,7 +10,7 @@
     "start": "npm run build && node server.js",
     "serve": "webpack --config ./webpack.dev.config.js && node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./webpack.dev.config.js  --inline --progress --colors --host 0.0.0.0 --port 4080",
     "test": "set NODE_ENV=test&&karma start",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test --watch"
   },
   "engines": {
     "node": "5.10.1"
